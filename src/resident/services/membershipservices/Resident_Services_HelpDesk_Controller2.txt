@@ -1,0 +1,431 @@
+/*
+package resident.services;
+
+import java.net.URL;
+import java.sql.Connection;
+import java.sql.Date;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.time.LocalDate;
+import java.util.ResourceBundle;
+
+import common.DataAccessController;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
+import javafx.scene.Node;
+import javafx.scene.control.Button;
+import javafx.scene.control.DatePicker;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.TextArea;
+import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
+import javafx.scene.input.MouseEvent;
+import javafx.stage.Stage;
+
+public class Resident_Services_HelpDesk_Controller2 implements javafx.fxml.Initializable; {
+@FXML private Button request_Worklist;	
+@FXML private Button new_Service_Request;
+@FXML private Button edit_Service_Request;
+@FXML private Button send_Service_Request;
+@FXML private Button print_Service_Request;
+@FXML private Button delete_Service_Request;
+@FXML private Button save_Service_Request;
+@FXML private Button first_Record;
+@FXML private Button next_Record;
+@FXML private Button prev_Record;
+@FXML private Button bottom_Record;
+
+@FXML public String customerName;
+@FXML TableView<Service_Bean> request_Table;
+@FXML TableColumn<Service_Bean,String> f_requestorId;
+@FXML TableColumn<Service_Bean,String> f_name;
+@FXML TableColumn<Service_Bean,String> f_servRequestId; 
+@FXML TableColumn<Service_Bean,LocalDate> f_date;
+@FXML TableColumn<Service_Bean,String> f_time;
+@FXML TableColumn<Service_Bean,String> f_rservRequestId;
+@FXML TableColumn<Service_Bean,String> f_status;
+@FXML TableColumn<Service_Bean,String> f_remark;
+@FXML private TextField requestor_Id;
+@FXML private TextField requestor_Name;
+@FXML private TextField serv_request_Id; 
+@FXML private DatePicker d_date;
+@FXML private TextField request_Time;
+@FXML private TextField ref_Requestor_Id;
+@FXML private TextField serv_Status;
+@FXML private TextArea request_Remark;
+ObservableList<Service_Bean> tableData=null; 
+private int tableCurrRow=0;
+private int tableMaxRows=0;
+private boolean edit_data=false;
+private boolean new_data=false;
+public DataAccessController doc=new DataAccessController();
+public Resident_Services_DAO rdao=new Resident_Services_DAO();
+Connection con=doc.commonDataConnect();
+private String initstr;
+*/
+
+/*
+public void initScreen(String s1) 
+{
+this.initstr=s1;
+}
+
+	@FXML
+	private void handleWorklistButtonAction(ActionEvent event) 
+	{}
+
+	@FXML
+	private void handleNewButtonAction(ActionEvent event) 
+	{
+	new_data=true;
+	edit_data=false;
+	request_Table.editableProperty().set(false);
+	makeUIEditable();
+	clearFields();
+	disableButtonPanel();
+	save_Service_Request.setDisable(false);
+	requestor_Id.requestFocus();
+	}
+
+	@FXML
+	private void handleSaveButtonAction(ActionEvent event) 
+	{
+		if(edit_data || new_data)
+		{
+			Service_Bean forDao=null;
+			java.sql.Date d_dt1=null;
+			String d_requestor_Id=requestor_Id.getText();
+			String d_requestor_Name=requestor_Name.getText();
+			String d_serv_request_Id=serv_request_Id.getText(); 
+			if(d_date.getValue()!=null)
+			{
+			d_dt1 = java.sql.Date.valueOf(d_date.getValue());
+			}
+			else
+			{
+			d_dt1 = null;	
+			}
+			String d_request_Time=request_Time.getText();
+			String d_ref_Requestor_Id=ref_Requestor_Id.getText();
+			String d_serv_Status=serv_Status.getText();
+			String d_request_Remark=request_Remark.getText();
+			Service_Bean forDao = new Service_Bean(d_requestor_Id,d_requestor_Name,d_serv_request_Id,d_dt1,d_request_Time,d_ref_Requestor_Id,d_serv_Status,d_request_Remark);	
+		try {
+			if(new_data)
+			{
+			new_data=false;					
+			rdao.insertData(con,forDao);			
+			tableData.add(forDao);
+			}
+			else
+			{
+			edit_data=false;
+			rdao.updateData(con,forDao);
+			}
+			this.enableButtonPanel();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		}
+	}
+	
+	@FXML
+	private void handleEditButtonAction(ActionEvent event) 
+	{
+		request_Table.editableProperty().set(false);
+		makeUIEditable();
+		disableButtonPanel();
+		save_Service_Request.setDisable(false);
+		requestor_Id.requestFocus();	
+	}
+
+	@FXML
+	private void handleExitButtonAction(ActionEvent event) 
+	{
+		try {
+			if(!con.isClosed() || con!=null)
+			con.close();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}	
+		Stage stage = (Stage) ((Node)event.getTarget()).getScene().getWindow();
+	    stage.close();
+	}
+	
+	@FXML
+	private void handleSendButtonAction(ActionEvent event) 
+	{
+	Data_Manipulation_Util dm=new Data_Manipulation_Util();
+	dm.sendServiceRequest(null);
+	}
+
+	@FXML
+	private void handlePrintButtonAction(ActionEvent event) 
+	{
+	Data_Manipulation_Util dm=new Data_Manipulation_Util();
+	dm.printServiceRequest(null);
+	}
+
+	@FXML
+	private void handleDeleteButtonAction(ActionEvent event) 
+	{
+	}
+
+	@Override
+public void initialize(URL arg0, ResourceBundle arg1) {
+	// TODO Auto-generated method stub
+	System.out.println("Init as :"+this.initstr);
+	setTableData(null);
+	initData(null);
+	makeUIUneditable();
+	tableCurrRow=0;
+	if(tableData.size()>0)
+	selectSpecificTableItem();
+	request_Table.getFocusModel().focus(tableCurrRow);	
+	}
+
+/* Select Table Row - Mouse Movement */
+/*
+@FXML
+private void handleRequestorIDKeyReleaseAction(KeyEvent event) 
+{
+	try {
+		if (event.getCode()==KeyCode.UP || event.getCode()==KeyCode.DOWN)
+		{
+			System.out.println("here");
+			makeUIUneditable();
+			selectDirectTableItem();
+		}
+	} catch (Exception e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
+}
+
+*/
+/* Initialize Tables For View */
+/*
+public void initData(String s) 
+{
+		//DataAccessController doc = new DataAccessController(); 
+		Connection con=doc.commonDataConnect();
+		ResultSet rs=doc.commonDataFetch(con,"select * from SERVICE_MASTER");
+		tableData = FXCollections.observableArrayList();
+		try {
+			while (rs.next())
+			{
+			tableData.add(new Service_Bean(rs.getString("Requestor_Id"),rs.getString("name"),rs.getString("Serv_RequestId"),rs.getDate("Req_Date"),rs.getString("Req_Time"),rs.getString("ref_ServRequestID"),rs.getString("status"),rs.getString("remark")));
+			}
+			request_Table.setItems(tableData);
+			con.close();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}		
+		}
+
+*/
+
+/*
+public void setTableData(String s) 
+{
+try {
+	f_requestorId.setCellValueFactory(new PropertyValueFactory<Service_Bean,String>("f_requestorId"));
+	f_name.setCellValueFactory(new PropertyValueFactory<Service_Bean,String>("f_name"));
+	f_servRequestId.setCellValueFactory(new PropertyValueFactory<Service_Bean,String>("f_servRequestId"));
+	f_date.setCellValueFactory(new PropertyValueFactory<Service_Bean,LocalDate>("f_date"));
+	f_status.setCellValueFactory(new PropertyValueFactory<Service_Bean,String>("f_status"));
+	f_remark.setCellValueFactory(new PropertyValueFactory<Service_Bean,String>("f_remark"));
+	f_time.setCellValueFactory(new PropertyValueFactory<Service_Bean,String>("f_time"));
+	f_rservRequestId.setCellValueFactory(new PropertyValueFactory<Service_Bean,String>("f_rservRequestId"));
+} catch (Exception e) {
+	// TODO Auto-generated catch block
+	e.printStackTrace();
+}
+}
+
+/* Select Table Row - Mouse Movement */
+/*
+@FXML
+private void handleTableItemMouseClicked(MouseEvent event) 
+{
+if(!new_data && !edit_data)
+{	
+makeUIUneditable();
+selectDirectTableItem();
+}
+}
+
+*/
+/* Select Top Button */
+/*
+@FXML
+private void handleFirstRecordMouseClicked(MouseEvent event) 
+{
+try {
+	tableCurrRow=0;
+	makeUIUneditable();
+	selectSpecificTableItem();
+	request_Table.requestFocus();
+	request_Table.getSelectionModel().select(tableCurrRow);
+	request_Table.getFocusModel().focus(tableCurrRow);
+} catch (Exception e) {
+	// TODO Auto-generated catch block
+	e.printStackTrace();
+}
+}
+
+/* Select Bottom Button */
+/*
+@FXML
+private void handleBottomRecordMouseClicked(MouseEvent event) 
+{
+tableCurrRow=request_Table.getItems().size()-1;
+makeUIUneditable();
+selectSpecificTableItem();
+request_Table.requestFocus();
+request_Table.getSelectionModel().select(tableCurrRow);
+request_Table.getFocusModel().focus(tableCurrRow);
+}
+*/
+/* Select Next Button */
+/*
+@FXML
+private void handleNextRecordMouseClicked(MouseEvent event) 
+{
+if(tableCurrRow<request_Table.getItems().size()-1)
+{
+	tableCurrRow++;
+	makeUIUneditable();
+	selectSpecificTableItem();
+	
+	request_Table.requestFocus();
+	request_Table.getSelectionModel().select(tableCurrRow);
+	request_Table.getFocusModel().focus(tableCurrRow);
+}
+}
+
+/* Select Next Button */
+/*
+@FXML
+private void handlePrevRecordMouseClicked(MouseEvent event) 
+{
+if(tableCurrRow>0)
+{
+	tableCurrRow--;
+	makeUIUneditable();
+	selectSpecificTableItem();
+	request_Table.requestFocus();
+	request_Table.getSelectionModel().select(tableCurrRow);
+	request_Table.getFocusModel().focus(tableCurrRow);
+}
+}
+*/
+/*
+private void selectSpecificTableItem()
+{
+Service_Bean tableRow = request_Table.getItems().get(tableCurrRow);
+selectTableItem(tableRow);
+}
+*/
+
+/*
+private void selectDirectTableItem()
+{
+Service_Bean serv = request_Table.getSelectionModel().getSelectedItem();
+selectTableItem(serv);
+}
+
+private void selectTableItem(Service_Bean serv)
+{
+if(tableData.size()>0)
+{
+this.clearFields();	
+requestor_Id.setText(serv.getf_requestorId());
+requestor_Name.setText(serv.getf_name());
+serv_request_Id.setText(serv.getf_servRequestId());
+if(serv.f_date()!=null)
+d_date.setValue(serv.f_date());
+request_Time.setText(serv.getf_time());
+ref_Requestor_Id.setText(serv.getf_rservRequestId());
+serv_Status.setText(serv.getf_status());
+request_Remark.setText(serv.getf_remark());
+}
+}
+
+private void makeUIUneditable()
+{
+requestor_Id.setEditable(false);
+requestor_Name.setEditable(false);
+serv_request_Id.setEditable(false);
+d_date.setEditable(false);
+request_Time.setEditable(false);
+ref_Requestor_Id.setEditable(false);
+serv_Status.setEditable(false);
+request_Remark.setEditable(false);
+}
+
+private void makeUIEditable()
+{
+requestor_Id.setEditable(true);
+requestor_Name.setEditable(true);
+serv_request_Id.setEditable(true);
+d_date.setEditable(true);
+request_Time.setEditable(true);
+ref_Requestor_Id.setEditable(true);
+serv_Status.setEditable(true);
+request_Remark.setEditable(true);
+}
+
+private void clearFields()
+{
+requestor_Id.clear();
+requestor_Name.clear();
+serv_request_Id.clear();
+request_Time.clear();
+ref_Requestor_Id.clear();
+serv_Status.clear();
+request_Remark.clear();
+d_date.getEditor().clear();
+}
+
+private void disableButtonPanel()
+{
+request_Worklist.setDisable(true);	
+new_Service_Request.setDisable(true);
+edit_Service_Request.setDisable(true);
+send_Service_Request.setDisable(true);
+print_Service_Request.setDisable(true);
+delete_Service_Request.setDisable(true);
+save_Service_Request.setDisable(true);
+first_Record.setDisable(true);
+next_Record.setDisable(true);
+prev_Record.setDisable(true);
+bottom_Record.setDisable(true);
+}
+
+private void enableButtonPanel()
+{
+request_Worklist.setDisable(false);	
+new_Service_Request.setDisable(false);
+edit_Service_Request.setDisable(false);
+send_Service_Request.setDisable(false);
+print_Service_Request.setDisable(false);
+delete_Service_Request.setDisable(false);
+save_Service_Request.setDisable(false);
+first_Record.setDisable(false);
+next_Record.setDisable(false);
+prev_Record.setDisable(false);
+bottom_Record.setDisable(false);
+}
+
+}
+*/

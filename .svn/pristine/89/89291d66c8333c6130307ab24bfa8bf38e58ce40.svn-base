@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <AnchorPane fx:id="a2" layoutX="186.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="600.0" prefWidth="564.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="186.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <TableView fx:id="request_Table" layoutX="16.0" layoutY="377.0" onKeyReleased="#handleRequestorIDKeyReleaseAction" onMouseClicked="#handleTableItemMouseClicked" prefHeight="213.0" prefWidth="538.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="377.0">
+               <columns>
+                  <TableColumn fx:id="f_date" prefWidth="50.0" text="Date" />
+                  <TableColumn fx:id="f_time" prefWidth="41.0" text="Time" />
+                  <TableColumn fx:id="f_type" prefWidth="89.0" text="Type" />
+                  <TableColumn fx:id="f_membership" prefWidth="89.0" text="Id" />
+                  <TableColumn fx:id="f_referenceid" prefWidth="75.0" text="Reference Request Id" />
+                  <TableColumn fx:id="f_status" prefWidth="146.0" text="Status" />
+                  <TableColumn fx:id="f_remark" prefWidth="75.0" text="Remark" />
+               </columns>
+            </TableView>
+            <Separator orientation="VERTICAL" prefHeight="400.0" prefWidth="9.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="600.0" AnchorPane.topAnchor="0.0" />
+            <GridPane focusTraversable="true" hgap="10.0" layoutX="103.0" layoutY="53.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="324.0" prefWidth="568.0" AnchorPane.bottomAnchor="255.0" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Pane fx:id="l_pane9" prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="8" />
+                  <Pane fx:id="l_pane8" prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="7" />
+                  <Pane fx:id="l_pane7" prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="6" />
+                  <Pane fx:id="l_pane6" prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="5" />
+                  <Pane fx:id="l_pane5" prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="4" />
+                  <Pane fx:id="l_pane4" prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="3" />
+                  <Pane fx:id="l_pane3" prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="2" />
+                  <Pane fx:id="l_pane2" prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1" />
+                  <Pane fx:id="l_pane1" prefHeight="200.0" prefWidth="200.0" />
+                  <Pane fx:id="e_pane9" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+                  <Pane fx:id="e_pane8" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                  <Pane fx:id="e_pane7" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                  <Pane fx:id="e_pane6" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                  <Pane fx:id="e_pane5" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                  <Pane fx:id="e_pane4" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                  <Pane fx:id="e_pane3" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <Pane fx:id="e_pane2" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <Pane fx:id="e_pane1" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" />
+                  <Label text="Reference Id" GridPane.halignment="CENTER" GridPane.rowIndex="6" />
+                  <Label text="Remark" GridPane.halignment="CENTER" GridPane.rowIndex="8" />
+                  <ComboBox fx:id="serv_type_list" maxHeight="-Infinity" maxWidth="-Infinity" onAction="#handleListItemSelection" onKeyReleased="#handleListItemKeyList" prefHeight="25.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="4" />
+                  <TextField fx:id="serv_request_Id" maxHeight="-Infinity" maxWidth="-Infinity" onAction="#handleRequestorIdAction" onKeyReleased="#handleRequestorIdSearchAction" prefHeight="25.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="5" />
+                  <TextField fx:id="ref_Requestor_Id" maxHeight="-Infinity" maxWidth="-Infinity" onAction="#ref_Requestor_checkout_event" onKeyReleased="#ref_Requestor_checkout_keyevent" prefHeight="25.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="6" />
+                  <TextField fx:id="serv_Status" maxHeight="-Infinity" maxWidth="-Infinity" onAction="#serv_Status_checkout_event" onKeyReleased="#serv_Status_checkout_keyevent" prefHeight="25.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="7" />
+                  <TextArea fx:id="request_Remark" maxHeight="-Infinity" maxWidth="-Infinity" onKeyReleased="#remark_checkout_event" prefHeight="43.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="8">
+                     <GridPane.margin>
+                        <Insets top="10.0" />
+                     </GridPane.margin>
+                  </TextArea>
+                  <Label fx:id="d_date" alignment="CENTER" contentDisplay="CENTER" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="6">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="request_Time" alignment="CENTER" contentDisplay="CENTER" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="7">
+                     <font>
+                        <Font size="15.0" />
+                     </font></Label>
+                  <Label text="Membership Id" textAlignment="CENTER" GridPane.halignment="CENTER" GridPane.rowIndex="5" />
+                  <Label text="User ID" GridPane.halignment="CENTER" />
+                  <Label fx:id="l_pane10" contentDisplay="CENTER" text="Label" GridPane.columnIndex="1" GridPane.halignment="CENTER" />
+                  <Label text="Membership Type" GridPane.halignment="CENTER" GridPane.rowIndex="4" />
+                  <Label text="Status" GridPane.halignment="CENTER" GridPane.rowIndex="7" />
+                  <Label text="Time" GridPane.halignment="CENTER" GridPane.rowIndex="3" />
+                  <Label text="Name" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+                  <Label text="Date" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
+                  <Label fx:id="requestor_Name" contentDisplay="CENTER" text="Label" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+                  <Label fx:id="l_pane1011" contentDisplay="CENTER" text="Label" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
+                  <Label fx:id="l_pane1012" contentDisplay="CENTER" text="Label" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3" />
+               </children>
+               <padding>
+                  <Insets bottom="20.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+            </GridPane>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="a1" prefHeight="600.0" prefWidth="188.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="562.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <VBox fx:id="buttonpanel" alignment="CENTER" layoutX="22.0" prefHeight="613.0" prefWidth="178.0" spacing="10.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <JFXButton fx:id="first_Record" alignment="BASELINE_LEFT" buttonType="RAISED" graphicTextGap="15.0" minHeight="30.0" minWidth="150.0" onAction="#handleFirstRecordMouseClicked" text="Top" textAlignment="CENTER">
+                     <graphic>
+                        <FontAwesomeIconView boundsType="LOGICAL_VERTICAL_CENTER" glyphName="LEVEL_UP" size="20" />
+                     </graphic>
+                  </JFXButton>
+                  <JFXButton fx:id="prev_Record" alignment="BASELINE_LEFT" buttonType="RAISED" graphicTextGap="15.0" minHeight="30.0" minWidth="150.0" onAction="#handlePrevRecordMouseClicked" text="Previous" textAlignment="CENTER">
+                     <graphic>
+                        <FontAwesomeIconView boundsType="LOGICAL_VERTICAL_CENTER" glyphName="ARROW_CIRCLE_ALT_UP" size="20" />
+                     </graphic>
+                  </JFXButton>
+                  <JFXButton fx:id="next_Record" alignment="BASELINE_LEFT" buttonType="RAISED" graphicTextGap="15.0" minHeight="30.0" minWidth="150.0" onAction="#handleNextRecordMouseClicked" text="Next" textAlignment="CENTER">
+                     <graphic>
+                        <FontAwesomeIconView boundsType="LOGICAL_VERTICAL_CENTER" glyphName="ARROW_CIRCLE_ALT_DOWN" size="20" />
+                     </graphic>
+                  </JFXButton>
+                  <JFXButton fx:id="bottom_Record" alignment="BASELINE_LEFT" buttonType="RAISED" graphicTextGap="15.0" minHeight="30.0" minWidth="150.0" onAction="#handleBottomRecordMouseClicked" text="Last" textAlignment="CENTER">
+                     <graphic>
+                        <FontAwesomeIconView boundsType="LOGICAL_VERTICAL_CENTER" glyphName="LEVEL_DOWN" size="20" />
+                     </graphic>
+                  </JFXButton>
+                  <JFXButton fx:id="request_Worklist" alignment="BASELINE_LEFT" buttonType="RAISED" graphicTextGap="15.0" minHeight="30.0" minWidth="150.0" onAction="#handleWorklistButtonAction" text="Worklist" textAlignment="CENTER">
+                     <graphic>
+                        <FontAwesomeIconView boundsType="LOGICAL_VERTICAL_CENTER" glyphName="LIST" size="20" />
+                     </graphic>
+                  </JFXButton>
+                  <JFXButton fx:id="new_Service_Request" alignment="BASELINE_LEFT" buttonType="RAISED" graphicTextGap="15.0" minHeight="30.0" minWidth="150.0" onAction="#handleNewButtonAction" text="New" textAlignment="CENTER">
+                     <graphic>
+                        <FontAwesomeIconView glyphName="FILE_ALT" size="20" />
+                     </graphic>
+                  </JFXButton>
+                  <JFXButton fx:id="save_Service_Request" alignment="BASELINE_LEFT" buttonType="RAISED" graphicTextGap="15.0" minHeight="30.0" minWidth="150.0" onAction="#handleSaveButtonAction" text="Save" textAlignment="CENTER">
+                     <graphic>
+                        <FontAwesomeIconView boundsType="LOGICAL_VERTICAL_CENTER" glyphName="FLOPPY_ALT" size="20" text="" />
+                     </graphic>
+                  </JFXButton>
+                  <JFXButton fx:id="edit_Service_Request" alignment="BASELINE_LEFT" buttonType="RAISED" graphicTextGap="15.0" minHeight="30.0" minWidth="150.0" onAction="#handleEditButtonAction" text="Edit" textAlignment="CENTER">
+                     <graphic>
+                        <FontAwesomeIconView glyphName="EDIT" size="20" />
+                     </graphic>
+                  </JFXButton>
+                  <JFXButton fx:id="send_Service_Request" alignment="BASELINE_LEFT" buttonType="RAISED" graphicTextGap="15.0" minHeight="30.0" minWidth="150.0" onAction="#handleSendButtonAction" text="Send" textAlignment="CENTER">
+                     <graphic>
+                        <FontAwesomeIconView glyphName="MAIL_FORWARD" size="20" />
+                     </graphic>
+                  </JFXButton>
+                  <JFXButton fx:id="print_Service_Request" alignment="BASELINE_LEFT" buttonType="RAISED" graphicTextGap="15.0" minHeight="30.0" minWidth="150.0" onAction="#handlePrintButtonAction" text="Print" textAlignment="CENTER">
+                     <graphic>
+                        <FontAwesomeIconView glyphName="PRINT" size="20" />
+                     </graphic>
+                  </JFXButton>
+                  <JFXButton fx:id="delete_Service_Request" alignment="BASELINE_LEFT" buttonType="RAISED" graphicTextGap="15.0" minHeight="30.0" minWidth="150.0" onAction="#handleDeleteButtonAction" text="Delete" textAlignment="CENTER">
+                     <graphic>
+                        <FontAwesomeIconView glyphName="TRASH" size="20" />
+                     </graphic>
+                  </JFXButton>
+                  <JFXButton fx:id="search_Service_Request" alignment="BASELINE_LEFT" buttonType="RAISED" graphicTextGap="15.0" minHeight="30.0" minWidth="150.0" onAction="#handleRequestorIdKeyAction" text="Search" textAlignment="CENTER">
+                     <graphic>
+                        <FontAwesomeIconView glyphName="SEARCH" size="20" />
+                     </graphic>
+                  </JFXButton>
+                  <JFXButton fx:id="cancel_Service_Request" alignment="BASELINE_LEFT" buttonType="RAISED" graphicTextGap="15.0" minHeight="30.0" minWidth="150.0" onAction="#handleCancelAction" text="Cancel" textAlignment="CENTER">
+                     <graphic>
+                        <FontAwesomeIconView glyphName="UNDO" size="20" text="" />
+                     </graphic>
+                  </JFXButton>
+                  <JFXButton fx:id="exit" alignment="BASELINE_LEFT" buttonType="RAISED" graphicTextGap="15.0" minHeight="30.0" minWidth="150.0" onAction="#handleExitButtonAction" text="Exit" textAlignment="CENTER">
+                     <graphic>
+                        <FontAwesomeIconView boundsType="LOGICAL_VERTICAL_CENTER" glyphName="TIMES_CIRCLE" size="20" />
+                     </graphic>
+                  </JFXButton>
+               </children>
+            </VBox>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

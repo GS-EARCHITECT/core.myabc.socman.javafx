@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.input.*?>
+<?import javafx.scene.effect.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<BorderPane fx:id="sms_launcher" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.TestController">
+   <top>
+      <MenuBar fx:id="myMenuBar" BorderPane.alignment="CENTER">
+        <menus>
+          <Menu id="menubar.SERV" text="SERVICES">
+               <items>
+                  <MenuItem id="SERV.MAIN" fx:id="maintenance" onAction="#handleMenuAction" text="MAINTENANCE">
+                     <accelerator>
+                        <KeyCodeCombination alt="DOWN" code="M" control="UP" meta="UP" shift="UP" shortcut="UP" />
+                     </accelerator></MenuItem>
+                  <MenuItem id="RESIDENT" fx:id="RESIDENT" onAction="#handleMenuAction" text="RESIDENT">
+                     <accelerator>
+                        <KeyCodeCombination alt="DOWN" code="R" control="UP" meta="UP" shift="UP" shortcut="UP" />
+                     </accelerator></MenuItem>
+                  <MenuItem id="SERV.STAF" text="STAFF">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="S" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                     </accelerator></MenuItem>
+                  <MenuItem id="SERV.GUEST" text="GUEST">
+                     <accelerator>
+                        <KeyCodeCombination alt="DOWN" code="G" control="UP" meta="UP" shift="UP" shortcut="UP" />
+                     </accelerator></MenuItem>
+               </items>
+               <accelerator>
+                  <KeyCodeCombination alt="DOWN" code="S" control="UP" meta="UP" shift="UP" shortcut="UP" />
+               </accelerator>
+          </Menu>
+          <Menu id="menubar.UTIL" text="UTILITIES">
+            <items>
+              <MenuItem id="UTIL.ELEC" text="ELECTRICITY">
+                     <accelerator>
+                        <KeyCodeCombination alt="DOWN" code="E" control="UP" meta="UP" shift="UP" shortcut="UP" />
+                     </accelerator></MenuItem>
+                  <MenuItem id="UTIL.WATE" text="WATER">
+                     <accelerator>
+                        <KeyCodeCombination alt="DOWN" code="W" control="UP" meta="UP" shift="UP" shortcut="UP" />
+                     </accelerator></MenuItem>
+                  <MenuItem id="UTIL.SECU" text="SECURITY">
+                     <accelerator>
+                        <KeyCodeCombination alt="DOWN" code="T" control="UP" meta="UP" shift="UP" shortcut="UP" />
+                     </accelerator>
+                  </MenuItem>
+                  <MenuItem id="UTIL.HOUS" text="HOUSEKEEPING">
+                     <accelerator>
+                        <KeyCodeCombination alt="DOWN" code="H" control="UP" meta="UP" shift="UP" shortcut="UP" />
+                     </accelerator>
+                  </MenuItem>
+            </items>
+               <accelerator>
+                  <KeyCodeCombination alt="DOWN" code="U" control="UP" meta="UP" shift="UP" shortcut="UP" />
+               </accelerator>
+          </Menu>
+            <Menu mnemonicParsing="false" text="FACILITIES">
+              <items>
+                <MenuItem id="FACI.GYM" text="GYMNASIUM">
+                     <accelerator>
+                        <KeyCodeCombination alt="DOWN" code="G" control="UP" meta="UP" shift="UP" shortcut="UP" />
+                     </accelerator></MenuItem>
+                  <MenuItem id="UTIL.CLUB" text="CLUB">
+                     <accelerator>
+                        <KeyCodeCombination alt="DOWN" code="C" control="UP" meta="UP" shift="UP" shortcut="UP" />
+                     </accelerator></MenuItem>
+                  <MenuItem id="FACI.SPA" text="SPA &amp; SALON">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="O" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                     </accelerator>
+                  </MenuItem>
+              </items>
+            </Menu>
+            <Menu id="menubar.MIS" text="MIS">
+              <items>
+                <MenuItem id="MISR.MANA" text="MANAGEMENT">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="N" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                     </accelerator>
+                  </MenuItem>
+                  <MenuItem id="MISR.OPER" text="OPERATIONS">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="O" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                     </accelerator>
+                  </MenuItem>
+              </items>
+               <accelerator>
+                  <KeyCodeCombination alt="DOWN" code="I" control="UP" meta="UP" shift="UP" shortcut="UP" />
+               </accelerator>
+            </Menu>
+          <Menu mnemonicParsing="false" text="FUNDS">
+            <items>
+              <MenuItem id="FUND.BILL" text="BILLING">
+                     <accelerator>
+                        <KeyCodeCombination alt="DOWN" code="B" control="UP" meta="UP" shift="UP" shortcut="UP" />
+                     </accelerator></MenuItem>
+                  <MenuItem id="FUND.ACCO" text="ACCOUNTS">
+                     <accelerator>
+                        <KeyCodeCombination alt="DOWN" code="A" control="UP" meta="UP" shift="UP" shortcut="UP" />
+                     </accelerator>
+                  </MenuItem>
+                  <MenuItem id="FUND.VOUC" mnemonicParsing="false" text="VOUCHER ENTRY">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="V" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                     </accelerator>
+                  </MenuItem>
+            </items>
+          </Menu>
+            <Menu mnemonicParsing="false" text="ADMINISTRATION">
+              <items>
+                <MenuItem mnemonicParsing="false" text="MASTERS" />
+                  <MenuItem mnemonicParsing="false" text="SECURITY MANAGER" />
+                  <MenuItem mnemonicParsing="false" text="DOCUMENTS" />
+                  <MenuItem mnemonicParsing="false" text="COMMUNICATIONS" />
+                  <MenuItem mnemonicParsing="false" text="SETTINGS" />
+              </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="HELP">
+              <items>
+                  <MenuItem mnemonicParsing="false" text="CONTENTS" />
+                <MenuItem mnemonicParsing="false" text="ABOUT SMS" />
+              </items>
+            </Menu>
+        </menus>
+         <effect>
+            <InnerShadow />
+         </effect>
+      </MenuBar>
+   </top>
+   <effect>
+      <Glow />
+   </effect>
+</BorderPane>

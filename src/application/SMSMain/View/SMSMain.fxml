@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.effect.Light.Distant?>
+<?import javafx.scene.effect.Lighting?>
+<?import javafx.scene.effect.Shadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+
+<BorderPane fx:id="border_pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="640.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.SMSMainController">
+   <top>
+      <AnchorPane fx:id="top_anchor" prefHeight="50.0" prefWidth="1024.0" style="-fx-background-color: green;" BorderPane.alignment="CENTER">
+         <BorderPane.margin>
+            <Insets left="250.0" right="25.0" />
+         </BorderPane.margin>
+         <effect>
+            <Lighting>
+               <bumpInput>
+                  <Shadow />
+               </bumpInput>
+               <light>
+                  <Light.Distant />
+               </light>
+            </Lighting>
+         </effect>
+         <children>
+            <HBox alignment="CENTER_RIGHT" layoutX="83.0" layoutY="-25.0" prefHeight="100.0" prefWidth="200.0" spacing="10.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <Label fx:id="login_date" text="Date" />
+                  <Label fx:id="login_time" text="Time" textAlignment="CENTER" />
+                  <Label fx:id="loginid" alignment="TOP_RIGHT" contentDisplay="RIGHT" text="login" />
+               </children>
+            </HBox>
+         </children>
+      </AnchorPane>
+   </top>
+   <bottom>
+      <AnchorPane fx:id="bottom_anchor" prefHeight="50.0" prefWidth="1024.0" style="-fx-background-color: magenta;" BorderPane.alignment="CENTER">
+         <BorderPane.margin>
+            <Insets left="250.0" right="25.0" />
+         </BorderPane.margin>
+         <effect>
+            <Lighting>
+               <bumpInput>
+                  <Shadow />
+               </bumpInput>
+               <light>
+                  <Light.Distant />
+               </light>
+            </Lighting>
+         </effect>
+         <children>
+            <HBox layoutX="83.0" layoutY="-25.0" prefHeight="100.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+         </children>
+      </AnchorPane>
+   </bottom>
+   <left>
+      <AnchorPane fx:id="side_anchor" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: blue;" BorderPane.alignment="CENTER">
+         <effect>
+            <Lighting>
+               <bumpInput>
+                  <Shadow />
+               </bumpInput>
+               <light>
+                  <Light.Distant />
+               </light>
+            </Lighting>
+         </effect>
+         <children>
+            <TitledPane animated="false" layoutX="-1.0" layoutY="6.0" prefHeight="130.0" prefWidth="201.0" text="untitled" AnchorPane.bottomAnchor="250.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0" />
+         </children>
+      </AnchorPane>
+   </left>
+</BorderPane>

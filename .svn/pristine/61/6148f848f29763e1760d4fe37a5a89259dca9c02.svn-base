@@ -1,0 +1,183 @@
+/* JavaFX CSS - Leave this comment until you have at least create one rule which uses -fx-Property */
+root {
+    -fx-font-family: sans-serif;
+    -fx-font-size: 15px;    
+    -fx-background-color: blue;
+}
+
+.label { 
+	-fx-font-family: "Ariel";	
+	-fx-text-fill: white;
+	-fx-background-color : rgb(255,0,255);
+	-fx-font-size: 15px;
+	}
+
+.text-area {
+    -fx-font-family: "Ariel";
+    -fx-font-size: 15;
+    -fx-text-fill: rgb(255,255,0);
+    -fx-display-caret:true;
+}
+
+.text-area .content {
+    -fx-background-color: red;
+}
+
+.text-field { 
+	-fx-font-family: "Ariel";	
+	-fx-font-size: 15px;		
+	-fx-text-fill: antiquewhite;
+	-fx-background-color :  rgb(255,255,255);
+}
+.buttonpane {
+    -fx-background-color: green;
+}
+
+.button {
+    -fx-text-fill: white;
+    -fx-font-family: "Arial Narrow";
+    -fx-font-weight: bold;
+    -fx-background-color: rgb(255,255,128);    
+}
+
+.button:hover {
+    -fx-background-color: rgb(128,255,0);
+}
+
+.button:pressed {
+	-fx-background-color: rgb(255,0,255) ;
+    -fx-text-fill: blue;
+}
+.lpane {
+    -fx-background-color: black;
+}
+
+.epane {
+    -fx-background-color: burlywood;
+}
+
+.pane1 {
+    -fx-background-color: orange;
+}
+
+.pane2 {
+    -fx-background-color: purple;
+}
+
+.pane3 {
+    -fx-background-color: green;
+}
+.anchor_pane {
+    -fx-background-color: green;
+}
+
+.anchor_paneleft {
+    -fx-background-color: red;
+}
+
+.anchor_paneright {
+    -fx-background-color: green;
+}
+
+.header-section {
+    -fx-padding: 10px;
+    -fx-font-size: 20px;
+    -fx-background-color: teal;
+}
+
+.header-section Label {
+    -fx-text-fill: #ffffff;
+    -fx-padding: 10px;
+}
+
+#account {
+    -fx-background-color: transparent;
+    -fx-text-fill: #ffffff;
+    -fx-font-size: 16px;
+    -fx-cursor: hand;
+}
+
+.sidebar-section {
+    -fx-min-width: 200px;
+    -fx-pref-width: 200px;
+    -fx-max-width: 200px;
+    -fx-border-width: 1;
+    -fx-border-color: transparent #E8E8E8 transparent transparent;
+}
+
+.sidebar-section Label {
+    -fx-font-size: 18px;
+    -fx-padding: 10 15 10 15;
+    -fx-border-width: 1;
+    -fx-border-color: transparent transparent #E8E8E8 transparent;
+    -fx-min-width: 200px;
+    -fx-pref-width: 200px;
+    -fx-max-width: 200px;
+}
+
+.content-section {
+    -fx-padding: 10 20 10 20;
+    -fx-wrap-text: true;
+
+}
+
+#content-header {
+    -fx-font-size: 18px;
+    -fx-padding: 0 0 10 0;
+    -fx-font-weight: 700;
+}
+
+#content {
+    -fx-wrap-text: true;
+    -fx-font-size: 16px;
+}
+
+#footer-section {
+    -fx-alignment: center;
+    -fx-padding: 10 10 10 10;
+    -fx-border-width: 1;
+    -fx-border-color: #E8E8E8 transparent transparent transparent;
+}
+
+.table-view{
+   -fx-background-color: transparent;
+}
+
+.table-view:focused{
+    -fx-background-color: transparent;
+}
+
+.table-view .column-header-background{
+    -fx-background-color: linear-gradient(#131313 0%, #424141 100%);
+}
+
+.table-view .column-header-background .label{
+    -fx-background-color: transparent;
+    -fx-text-fill: white;
+}
+
+.table-view .column-header {
+    -fx-background-color: transparent;
+}
+
+.table-view .table-cell{
+    -fx-text-fill: white;
+}
+
+.table-row-cell{
+    -fx-background-color: -fx-table-cell-border-color, #616161;
+    -fx-background-insets: 0, 0 0 1 0;
+    -fx-padding: 0.0em; /* 0 */
+}
+
+.table-row-cell:odd{
+    -fx-background-color: -fx-table-cell-border-color, #424242;
+    -fx-background-insets: 0, 0 0 1 0;
+    -fx-padding: 0.0em; /* 0 */  
+}
+
+.table-row-cell:selected {
+    -fx-background-color: #005797;
+    -fx-background-insets: 0;
+    -fx-background-radius: 1;
+}

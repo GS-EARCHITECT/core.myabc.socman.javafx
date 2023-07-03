@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER">
+		<accessrules>
+			<accessrule kind="accessible" pattern="javafx/**"/>
+		</accessrules>
+	</classpathentry>
+	<classpathentry kind="con" path="org.eclipse.fx.ide.jdt.core.JAVAFX_CONTAINER"/>
+	<classpathentry kind="lib" path="C:/oraclexe/app/oracle/product/11.2.0/server/jdbc/lib/ojdbc6.jar"/>
+	<classpathentry kind="lib" path="C:/GAURAV/LIBRARY/SOFTWARE/JAVA/rowset_jdbc.jar/rowset_jdbc.jar"/>
+	<classpathentry kind="lib" path="C:/GAURAV/LIBRARY/SOFTWARE/UTILS/SceneBuilder/jfoenix-8.0.7.jar"/>
+	<classpathentry kind="lib" path="C:/GAURAV/LIBRARY/SOFTWARE/UTILS/SceneBuilder/fontawesomefx-8.9.jar"/>
+	<classpathentry kind="lib" path="C:/GAURAV/LIBRARY/SOFTWARE/JAVA/commons-collections4-4.2/commons-collections4-4.2.jar"/>
+	<classpathentry kind="lib" path="C:/GAURAV/LIBRARY/SOFTWARE/JAVA/commons-collections4-4.2/commons-collections4-4.2-javadoc.jar"/>
+	<classpathentry kind="lib" path="C:/GAURAV/LIBRARY/SOFTWARE/JAVA/commons-collections4-4.2/commons-collections4-4.2-sources.jar"/>
+	<classpathentry kind="lib" path="C:/GAURAV/LIBRARY/SOFTWARE/JAVA/commons-collections4-4.2/commons-collections4-4.2-tests.jar"/>
+	<classpathentry kind="lib" path="C:/GAURAV/LIBRARY/SOFTWARE/JAVA/commons-collections4-4.2/commons-collections4-4.2-test-sources.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

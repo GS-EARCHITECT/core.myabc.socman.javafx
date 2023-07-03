@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<SplitPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="428.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="owner.controllers.Owner_Services_Property_Controller">
+  <items>
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="448.0" prefWidth="598.0">
+         <children>
+            <Button fx:id="create" layoutX="494.0" layoutY="11.0" mnemonicParsing="false" onAction="#handleButtonAction" text="New Task" />
+            <Button fx:id="print" layoutX="496.0" layoutY="82.0" mnemonicParsing="false" onAction="#handleButtonAction" text="Print Task" />
+            <Button fx:id="delete" layoutX="495.0" layoutY="117.0" mnemonicParsing="false" onAction="#handleButtonAction" text="Close Task" />
+            <Separator layoutX="452.0" layoutY="5.0" orientation="VERTICAL" prefHeight="400.0" prefWidth="9.0" />
+            <StackPane layoutX="12.0" layoutY="267.0" prefHeight="150.0" prefWidth="434.0">
+               <children>
+                  <TableView prefHeight="200.0" prefWidth="200.0">
+                    <columns>
+                      <TableColumn prefWidth="75.0" text="C1" />
+                      <TableColumn prefWidth="75.0" text="C2" />
+                    </columns>
+                  </TableView>
+               </children>
+            </StackPane>
+            <Label layoutX="42.0" layoutY="155.0" text="Remark" />
+            <TextArea layoutX="94.0" layoutY="120.0" prefHeight="106.0" prefWidth="322.0" />
+            <Button layoutX="499.0" layoutY="153.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="40.0" text="Exit" />
+            <Label layoutX="42.0" layoutY="14.0" text="Task Id" />
+            <TextField id="prop_id" fx:id="property_id1" layoutX="90.0" layoutY="11.0" onAction="#handleEditAction" prefHeight="25.0" prefWidth="129.0" />
+            <Button layoutX="496.0" layoutY="47.0" mnemonicParsing="false" text="Save" />
+            <Separator layoutX="458.0" layoutY="263.0" prefHeight="4.0" prefWidth="139.0" />
+            <Label layoutX="43.0" layoutY="89.0" text="Staff Id" />
+            <TextField layoutX="93.0" layoutY="84.0" prefHeight="25.0" prefWidth="129.0" />
+            <Label layoutX="260.0" layoutY="13.0" text="Date" />
+            <TextField layoutX="297.0" layoutY="11.0" prefHeight="25.0" prefWidth="129.0" />
+            <Label layoutX="35.0" layoutY="50.0" text="Ticket Id" />
+            <TextField layoutX="91.0" layoutY="47.0" prefHeight="25.0" prefWidth="129.0" />
+            <Label layoutX="257.0" layoutY="48.0" text="Time" />
+            <TextField layoutX="298.0" layoutY="47.0" prefHeight="25.0" prefWidth="129.0" />
+         </children></AnchorPane>
+  </items>
+</SplitPane>

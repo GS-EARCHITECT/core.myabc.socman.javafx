@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.input.KeyCodeCombination?>
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" styleClass="pane" stylesheets="@../../application/application2.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+   <top>
+      <MenuBar fx:id="myMenuBar" stylesheets="@../../application/application2.css" BorderPane.alignment="CENTER">
+        <menus>
+          <Menu id="menubar.SERV" text="SERVICES">
+               <items>
+                  <Menu mnemonicParsing="false" text="PROPERTY">
+                    <items>
+                        <MenuItem onAction="#handleOwnerServicesPropertyMenuAction" text="INFORMATION">
+                           <accelerator>
+                              <KeyCodeCombination alt="DOWN" code="R" control="UP" meta="UP" shift="UP" shortcut="UP" />
+                           </accelerator>
+                        </MenuItem>
+                        <MenuItem mnemonicParsing="false" text="PROFILE" />
+                    </items>
+                  </Menu>
+                  <MenuItem id="SERV.MAIN" fx:id="maintenance" onAction="#handleOwnerServicesHelpdeskMenuAction" text="HELPDESK">
+                     <accelerator>
+                        <KeyCodeCombination alt="DOWN" code="M" control="UP" meta="UP" shift="UP" shortcut="UP" />
+                     </accelerator></MenuItem>
+                  <MenuItem fx:id="membership_services" mnemonicParsing="false" onAction="#handleOwnerServicesMembershipMenuAction" text="MEMBERSHIPS" />
+               </items>
+               <accelerator>
+                  <KeyCodeCombination alt="DOWN" code="S" control="UP" meta="UP" shift="UP" shortcut="UP" />
+               </accelerator>
+          </Menu>
+          <Menu id="menubar.UTIL" text="UTILITIES">
+            <items>
+                  <Menu mnemonicParsing="false" text="ELECTRICITY" />
+                  <Menu mnemonicParsing="false" text="WATER" />
+                  <Menu mnemonicParsing="false" text="GAS" />
+                  <Menu mnemonicParsing="false" text="HOUSEKEEPING" />
+                  <Menu mnemonicParsing="false" text="SECURITY" />
+            </items>
+               <accelerator>
+                  <KeyCodeCombination alt="DOWN" code="U" control="UP" meta="UP" shift="UP" shortcut="UP" />
+               </accelerator>
+          </Menu>
+            <Menu mnemonicParsing="false" text="FACILITIES">
+              <items>
+                  <Menu mnemonicParsing="false" text="TRANSPORTATION" />
+                  <Menu mnemonicParsing="false" text="BAR" />
+                  <Menu mnemonicParsing="false" text="GYM" />
+                  <Menu mnemonicParsing="false" text="CLUB" />
+                  <Menu mnemonicParsing="false" text="RESTAURANT" />
+                  <Menu mnemonicParsing="false" text="SPA &amp; SALON" />
+                  <Menu mnemonicParsing="false" text="ENTERTRAINMENT" />
+              </items>
+            </Menu>
+            <Menu id="menubar.MIS" text="BILLING">
+               <accelerator>
+                  <KeyCodeCombination alt="DOWN" code="I" control="UP" meta="UP" shift="UP" shortcut="UP" />
+               </accelerator>
+            </Menu>
+          <Menu mnemonicParsing="false" text="PAYMENT &amp; RECEIPT">
+            <items>
+              <MenuItem id="FUND.BILL" text="BILLING">
+                     <accelerator>
+                        <KeyCodeCombination alt="DOWN" code="B" control="UP" meta="UP" shift="UP" shortcut="UP" />
+                     </accelerator></MenuItem>
+                  <MenuItem id="FUND.ACCO" text="ACCOUNTS">
+                     <accelerator>
+                        <KeyCodeCombination alt="DOWN" code="A" control="UP" meta="UP" shift="UP" shortcut="UP" />
+                     </accelerator>
+                  </MenuItem>
+            </items>
+          </Menu>
+            <Menu mnemonicParsing="false" text="STORES">
+              <items>
+                <MenuItem mnemonicParsing="false" text="INFORMATION" />
+                  <MenuItem mnemonicParsing="false" text="REQUEST" />
+              </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="OTHERS">
+              <items>
+                  <MenuItem mnemonicParsing="false" text="DOCUMENTS" />
+                  <MenuItem mnemonicParsing="false" text="COMMUNICATIONS" />
+                  <MenuItem mnemonicParsing="false" text="SETTINGS" />
+              </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="HELP">
+              <items>
+                  <MenuItem mnemonicParsing="false" text="CONTENTS" />
+                <MenuItem mnemonicParsing="false" text="ABOUT SMS" />
+              </items>
+            </Menu>
+        </menus>
+         <effect>
+            <InnerShadow />
+         </effect>
+      </MenuBar>
+   </top>
+   <effect>
+      <Glow />
+   </effect>
+</BorderPane>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<SplitPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="428.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="owner.controllers.Owner_Services_Property_Controller">
+  <items>
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="448.0" prefWidth="598.0">
+         <children>
+            <Label layoutX="48.0" layoutY="14.0" text="Property ID" />
+            <TextField id="prop_id" fx:id="property_id" layoutX="121.0" layoutY="11.0" onAction="#handleEditAction" prefHeight="25.0" prefWidth="129.0" />
+            <Label layoutX="13.0" layoutY="158.0" text="Service Request Id" />
+            <Label layoutX="32.0" layoutY="48.0" text="Address Line 1" />
+            <TextField id="addr_1" fx:id="address_1" layoutX="122.0" layoutY="44.0" onAction="#handleEditAction" />
+            <Label layoutX="32.0" layoutY="83.0" text="Address Line 2" />
+            <TextField id="addr_2" fx:id="address_2" layoutX="122.0" layoutY="80.0" onAction="#handleEditAction" />
+            <TextField id="addr_3" fx:id="address_3" layoutX="122.0" layoutY="117.0" onAction="#handleEditAction" />
+            <Label layoutX="32.0" layoutY="122.0" text="Address Line 3" />
+            <TextField id="stat" fx:id="status" layoutX="122.0" layoutY="153.0" onAction="#handleEditAction" />
+            <Button fx:id="create" layoutX="491.0" layoutY="11.0" mnemonicParsing="false" onAction="#handleButtonAction" text="Work Allocation" />
+            <Button fx:id="print" layoutX="493.0" layoutY="48.0" mnemonicParsing="false" onAction="#handleButtonAction" text="Print Request" />
+            <Button fx:id="delete" layoutX="495.0" layoutY="84.0" mnemonicParsing="false" onAction="#handleButtonAction" text="Close Request" />
+            <Separator layoutX="452.0" layoutY="5.0" orientation="VERTICAL" prefHeight="400.0" prefWidth="9.0" />
+            <StackPane layoutX="12.0" layoutY="267.0" prefHeight="150.0" prefWidth="434.0">
+               <children>
+                  <TableView prefHeight="200.0" prefWidth="200.0">
+                    <columns>
+                      <TableColumn prefWidth="75.0" text="C1" />
+                      <TableColumn prefWidth="75.0" text="C2" />
+                    </columns>
+                  </TableView>
+               </children>
+            </StackPane>
+            <Label layoutX="280.0" layoutY="15.0" text="Owner Id" />
+            <TextField layoutX="340.0" layoutY="11.0" prefHeight="25.0" prefWidth="101.0" />
+            <Label layoutX="70.0" layoutY="209.0" text="Remark" />
+            <TextArea layoutX="123.0" layoutY="189.0" prefHeight="64.0" prefWidth="322.0" />
+            <Button layoutX="497.0" layoutY="120.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="40.0" text="Exit" />
+         </children></AnchorPane>
+  </items>
+</SplitPane>

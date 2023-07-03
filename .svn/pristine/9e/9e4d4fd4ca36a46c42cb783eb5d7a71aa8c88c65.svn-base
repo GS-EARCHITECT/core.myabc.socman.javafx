@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<SplitPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="owner.controllers.Owner_Services_Property_Controller">
+  <items>
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="394.0" prefWidth="598.0">
+         <children>
+            <Label layoutX="26.0" layoutY="11.0" text="Property ID" />
+            <TextField id="prop_id" fx:id="property_id" layoutX="97.0" layoutY="11.0" onAction="#handleEditAction" />
+            <Label layoutX="258.0" layoutY="11.0" text="Type" />
+            <TextField id="type" fx:id="type" layoutX="294.0" layoutY="11.0" onAction="#handleEditAction" prefHeight="17.0" prefWidth="48.0" />
+            <Label layoutX="52.0" layoutY="48.0" text="Status" />
+            <Label layoutX="11.0" layoutY="84.0" text="Address Line 1" />
+            <TextField id="addr_1" fx:id="address_1" layoutX="97.0" layoutY="80.0" onAction="#handleEditAction" />
+            <Label layoutX="11.0" layoutY="116.0" text="Address Line 2" />
+            <TextField id="addr_2" fx:id="address_2" layoutX="97.0" layoutY="113.0" onAction="#handleEditAction" />
+            <TextField id="addr_3" fx:id="address_3" layoutX="97.0" layoutY="148.0" onAction="#handleEditAction" />
+            <Label layoutX="8.0" layoutY="151.0" text="Address Line 3" />
+            <TextField id="stat" fx:id="status" layoutX="98.0" layoutY="45.0" onAction="#handleEditAction" />
+            <Button fx:id="send" layoutX="472.0" layoutY="16.0" mnemonicParsing="false" onAction="#handleButtonAction" text="Send" />
+            <Button fx:id="print" layoutX="473.0" layoutY="53.0" mnemonicParsing="false" onAction="#handleButtonAction" text="Print" />
+            <Separator layoutX="452.0" layoutY="5.0" orientation="VERTICAL" prefHeight="400.0" prefWidth="9.0" />
+            <StackPane layoutX="10.0" layoutY="238.0" prefHeight="150.0" prefWidth="434.0">
+               <children>
+                  <TableView prefHeight="200.0" prefWidth="200.0">
+                    <columns>
+                      <TableColumn prefWidth="75.0" text="C1" />
+                      <TableColumn prefWidth="75.0" text="C2" />
+                    </columns>
+                  </TableView>
+               </children>
+            </StackPane>
+            <Button layoutX="473.0" layoutY="90.0" mnemonicParsing="false" text="Exit" />
+            <Label layoutX="13.0" layoutY="188.0" text="Specifications" />
+            <Button layoutX="98.0" layoutY="186.0" mnemonicParsing="false" text="View" />
+         </children></AnchorPane>
+  </items>
+</SplitPane>
